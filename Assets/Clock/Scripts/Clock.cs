@@ -20,17 +20,11 @@ public class Clock : MonoBehaviour
 
     DateTime date;
 
-    private void Awake()
+    void Start()
     {
         HourHandTransform = transform.Find("HourHand");
         MinuteHandTransform = transform.Find("MinuteHand");
         SecondHandTransform = transform.Find("SecondHand");
-
-        date = DateTime.Now;
-
-        HourHandTransform.eulerAngles = new Vector3(0, 0, date.Hour * DegreesPerHour);
-        MinuteHandTransform.eulerAngles = new Vector3(0, 0, date.Minute * DegreesPerMinute);
-        SecondHandTransform.eulerAngles = new Vector3(0, 0, date.Second * DegreesPerSecond);
     }
 
     void Update()
